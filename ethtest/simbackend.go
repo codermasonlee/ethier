@@ -27,7 +27,7 @@ type SimulatedBackend struct {
 
 	AutoCommit bool
 	accounts   []*bind.TransactOpts
-	accountsPri []*ecdsa.PrivateKey
+	AccountsPri []*ecdsa.PrivateKey
 	// See comment on MockedEntity.
 	mockAccounts map[MockedEntity]*bind.TransactOpts
 }
@@ -78,7 +78,7 @@ func NewSimulatedBackend(numAccounts int) (*SimulatedBackend, error) {
 			return nil, err
 		}
 		sb.accounts = append(sb.accounts, txOpts)
-		sb.accountsPri=append(sb.accountsPri,pri)
+		sb.AccountsPri=append(sb.AccountsPri,pri)
 	}
 
 	// These accounts need to be deterministic so that any contracts they deploy
